@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navhost"
-    app:startDestination="@id/registerScreen">
+    app:startDestination="@id/mainScreen">
 
     <fragment
         android:id="@+id/registerScreen"
         android:name="com.example.sportlandapp.ui.RegisterScreen"
-        android:label="RegisterScreen" />
+        android:label="RegisterScreen" >
+        <action
+            android:id="@+id/action_registerScreen_to_sigInScreen"
+            app:destination="@id/sigInScreen" />
+        <action
+            android:id="@+id/action_registerScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/mainScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstProfile"
+        android:name="com.example.sportlandapp.ui.CreateGame"
+        android:label="FirstProfile" >
+        <action
+            android:id="@+id/action_firstProfile_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="com.example.sportlandapp.ui.MainScreen"
+        android:label="Главная"
+        tools:layout="@layout/fragment__main_screen">
+        <action
+            android:id="@+id/action_mainScreen_to_firstProfile"
+            app:destination="@id/firstProfile" />
+        <action
+            android:id="@+id/action_mainScreen_to_registerScreen4"
+            app:destination="@id/registerScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/sigInScreen"
+        android:name="com.example.sportlandapp.ui.SigInScreen"
+        android:label="SigInScreen" >
+        <action
+            android:id="@+id/action_sigInScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+        <action
+            android:id="@+id/action_sigInScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.example.sportlandapp.ui.ProfileScreen"
+        android:label="Профиль" />
 </navigation>
