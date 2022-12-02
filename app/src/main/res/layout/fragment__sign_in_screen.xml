@@ -7,16 +7,21 @@
     android:background="@color/green2"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/main_icon"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/main_icon" />
+
     <TextView
         android:id="@+id/main_sign_in_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:fontFamily="@font/roboto_black"
+        android:layout_marginTop="17dp"
         android:text="@string/view_again"
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@color/green3"
+        android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -28,7 +33,8 @@
         android:layout_marginTop="65dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/name2"
-        android:textColorHint="@color/green3">
+        android:textColorHint="@color/green3"
+        app:startIconDrawable="@drawable/face_24px">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -50,7 +56,8 @@
         android:textColorHint="@color/green3"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/green3"
-        app:errorEnabled="true">
+        app:errorEnabled="true"
+        app:startIconDrawable="@drawable/key_24px">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -67,7 +74,7 @@
         android:layout_height="wrap_content"
         android:text="@string/first_once"
         android:textAlignment="center"
-        android:textColor="@color/green3"/>
+        android:textColor="@color/green3" />
 
     <Button
         android:id="@+id/buttonToRegisterScreen"

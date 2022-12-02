@@ -3,6 +3,7 @@ package com.example.sportlandapp.ui
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -13,10 +14,11 @@ import com.example.sportlandapp.viewmodel.UserViewModel
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
 class RegisterScreen : Fragment(R.layout.fragment__register_sreen) {
+    private lateinit var binding: FragmentRegisterSreenBinding
     private val userViewModel: UserViewModel by activityViewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentRegisterSreenBinding.bind(view)
+        binding = FragmentRegisterSreenBinding.bind(view)
         val passwordEditText = binding.passwordLayout
         passwordEditText.editText?.doOnTextChanged { text, _, _, _ ->
             if (text?.length!! < 8)
@@ -24,18 +26,14 @@ class RegisterScreen : Fragment(R.layout.fragment__register_sreen) {
             else
                 passwordEditText.error = null
         }
-        binding.buttonLayout.setOnClickListener {
-            userViewModel.changeUserData(
-                name = binding.nameLayout.editText!!.text.toString(),
-                email = binding.loginLayout.editText!!.text.toString(),
-                password = binding.passwordLayout.editText!!.text.toString()
-            )
-            findNavController().navigate(R.id.action_registerScreen_to_mainScreen)
-        }
+
         binding.loginLayout.typeface = Typeface.DEFAULT_BOLD
         binding.passwordLayout.typeface = Typeface.DEFAULT_BOLD
         binding.nameLayout.typeface = Typeface.DEFAULT_BOLD
         binding.mainCity.typeface = Typeface.DEFAULT_BOLD
+        binding.buttonLayout.setOnClickListener {
+            toNextScreen()
+        }
 
         binding.signInButton.setOnClickListener {
             findNavController().navigate(R.id.action_registerScreen_to_sigInScreen)
@@ -50,5 +48,29 @@ class RegisterScreen : Fragment(R.layout.fragment__register_sreen) {
         )
         (binding.mainCity.editText as? MaterialAutoCompleteTextView)?.setSimpleItems(items)
     }
+
+    private fun toNextScreen() {
+        if (binding.nameLayout.editText!!.text.toString().isEmpty() ||
+
+            binding.loginLayout.editText!!.text.toString().isEmpty() ||
+            !binding.loginLayout.editText!!.text.toString().contains("@")
+            ||
+            binding.passwordLayout.editText!!.text.toString().isEmpty() ||
+            binding.mainCity.editText!!.text.toString().isEmpty()
+
+        ) Toast.makeText(
+            requireContext(), "Заполните поля", Toast.LENGTH_SHORT
+        ).show()
+        else {
+            userViewModel.changeUserData(
+                name = binding.nameLayout.editText!!.text.toString(),
+                email = binding.loginLayout.editText!!.text.toString(),
+                password = binding.passwordLayout.editText!!.text.toString()
+            )
+            findNavController().navigate(R.id.action_registerScreen_to_mainScreen)
+        }
+    }
 }
+
+
 

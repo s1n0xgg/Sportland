@@ -14,10 +14,11 @@ import com.example.sportlandapp.viewmodel.GameViewModel
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
 class CreateGame : Fragment(R.layout.fragment__create_game) {
+    private lateinit var binding: FragmentCreateGameBinding
     private val GameViewModel: GameViewModel by activityViewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentCreateGameBinding.bind(view)
+        binding = FragmentCreateGameBinding.bind(view)
         val items = arrayOf(
             "Тобольск",
             "Тюмень",
@@ -40,22 +41,37 @@ class CreateGame : Fragment(R.layout.fragment__create_game) {
         )
         (binding.mainSport.editText as? MaterialAutoCompleteTextView)?.setSimpleItems(item)
 
-        binding.mainCity.typeface = Typeface.DEFAULT_BOLD
-        binding.space.typeface = Typeface.DEFAULT_BOLD
-        binding.time.typeface = Typeface.DEFAULT_BOLD
-        binding.mainSport.typeface = Typeface.DEFAULT_BOLD
-        binding.numberPlayers.typeface = Typeface.DEFAULT_BOLD
+        binding.apply {
+            mainCity.typeface = Typeface.DEFAULT_BOLD
+            space.typeface = Typeface.DEFAULT_BOLD
+            time.typeface = Typeface.DEFAULT_BOLD
+            mainSport.typeface = Typeface.DEFAULT_BOLD
+            numberPlayers.typeface = Typeface.DEFAULT_BOLD
+            button2.setOnClickListener { toNextScreen() }
+        }
+    }
 
-        binding.button2.setOnClickListener {
-            findNavController().navigate(R.id.action_firstProfile_to_mainScreen)
-            Toast.makeText(requireContext(), "Игра успешно создана!", Toast.LENGTH_SHORT).show()
+    private fun toNextScreen() {
+        if (binding.space.editText!!.text.toString().isEmpty() ||
+            binding.time.editText!!.text.toString().isEmpty() ||
+            binding.mainSport.editText!!.text.toString().isEmpty() ||
+            binding.numberPlayers.editText!!.text.toString().isEmpty() ||
+            binding.mainCity.editText!!.text.toString().isEmpty()
+        ) Toast.makeText(
+            requireContext(), "Заполните поля", Toast.LENGTH_SHORT
+        ).show()
+        else {
             GameViewModel.addgame(
                 GameModel(
                     binding.mainSport.editText!!.text.toString(),
                     binding.time.editText!!.text.toString(),
                     binding.mainCity.editText!!.text.toString(),
+                    binding.space.editText!!.text.toString(),
+                    binding.numberPlayers.editText!!.text.toString(),
                 )
             )
+            findNavController().navigate(R.id.action_firstProfile_to_mainScreen)
         }
     }
 }
+

@@ -14,6 +14,8 @@ class GamesAdaptor(private val GamesDataSet: List<GameModel>) :
         val game_name = view.findViewById<TextView>(R.id.game_name)
         val game_time = view.findViewById<TextView>(R.id.game_time)
         val game_city = view.findViewById<TextView>(R.id.game_city)
+        val location_text = view.findViewById<TextView>(R.id.location_text)
+        val number_text = view.findViewById<TextView>(R.id.number_text)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,6 +27,8 @@ class GamesAdaptor(private val GamesDataSet: List<GameModel>) :
         holder.game_name.text = GamesDataSet[position].Title
         holder.game_time.text = GamesDataSet[position].Time
         holder.game_city.text = holder.itemView.context.getString(R.string.city, GamesDataSet[position].City)
+        holder.location_text.text = holder.itemView.context.getString(R.string.location, GamesDataSet[position].Space)
+        holder.number_text.text = holder.itemView.context.getString(R.string.number, GamesDataSet[position].Number)
     }
 
     override fun getItemCount(): Int {
