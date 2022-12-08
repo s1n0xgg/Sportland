@@ -4,27 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green2">
+    android:background="@color/green3">
 
     <ImageView
         android:id="@+id/main_icon"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/main_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="@string/welcome_to_sportland"
-        android:textAlignment="center"
-        android:textColor="@color/green3"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -33,22 +25,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/login"
         android:textColorHint="@color/green3"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameLayout"
-        app:startIconDrawable="@drawable/drafts_24px">
+        app:layout_constraintTop_toBottomOf="@+id/nameLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:maxLength="32"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/password"
         android:textColorHint="@color/green3"
@@ -67,15 +59,15 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginLayout"
-        app:startIconDrawable="@drawable/key_24px">
+        app:layout_constraintTop_toBottomOf="@+id/loginLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:maxLength="32"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,29 +84,29 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:startIconDrawable="@drawable/face_24px">
+        app:layout_constraintTop_toBottomOf="@+id/main_icon">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:maxLength="32"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonLayout"
         style="@style/button_style"
+        android:layout_marginBottom="48dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="75dp"
         android:layout_marginEnd="64dp"
         android:text="@string/next2"
-        android:textColor="@color/green2"
+        android:textColor="@color/green3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_city" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/sign_in_button"
@@ -133,10 +125,10 @@
         android:id="@+id/sign_in_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="85dp"
         android:layout_marginTop="16dp"
         android:text="@string/registration"
-        android:textColor="@color/green3"
+        android:textColor="@color/green2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_city" />
@@ -147,21 +139,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/choose_city"
         android:textColorHint="@color/green3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
-        app:startIconDrawable="@drawable/location_on_24px">
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout">
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="none"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

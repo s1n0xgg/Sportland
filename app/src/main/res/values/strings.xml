@@ -40,6 +40,6 @@
     <string name="profile2">Профиль</string>
     <string name="time">Время: %s</string>
     <string name="city">%s</string>
-    <string name="number">%s</string>
+    <string name="number">%d/%d</string>
     <string name="location">%s</string>
 </resources>

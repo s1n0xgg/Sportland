@@ -22,9 +22,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        android:background="@color/green3"
-        app:itemIconTint="@color/green2"
-        app:itemTextColor="@color/green2" />
+        android:background="@color/green2"
+        app:itemIconTint="@color/green3"
+        app:itemTextColor="@color/green3" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -32,7 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/green2">
+        android:background="@color/green3"
+        app:titleTextColor="@color/green2">
 
     </com.google.android.material.appbar.MaterialToolbar>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green2"
+    android:background="@color/green3"
     android:orientation="vertical">
 
     <TextView
@@ -17,7 +17,7 @@
         android:text="@string/create_game"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textColor="@color/green3"
+        android:textColor="@color/green2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:inputType="none"
             android:maxLines="1"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +61,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:maxLength="30"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,7 +82,8 @@
             android:layout_height="wrap_content"
             android:maxLength="5"
             android:maxLines="1"
-            android:inputType="time"/>
+            android:inputType="time"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +105,8 @@
             android:layout_height="wrap_content"
             android:inputType="none"
             android:maxLines="1"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,7 +126,8 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:maxLength="2"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,6 +140,6 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="64dp"
         android:text="@string/create_game2"
-        android:textColor="@color/green2" />
+        android:textColor="@color/green3" />
 
 </LinearLayout>

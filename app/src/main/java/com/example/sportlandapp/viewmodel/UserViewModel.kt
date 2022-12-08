@@ -3,11 +3,15 @@ package com.example.sportlandapp.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.sportlandapp.ui.models.GameModel
+import java.util.UUID
 
 class UserViewModel : ViewModel() {
+    private val _playersGames = MutableLiveData<List<UUID>>(emptyList())
     private val _email = MutableLiveData<String>("")
     private val _name = MutableLiveData<String>("")
     private val _password = MutableLiveData<String>("")
+    val playersGames: LiveData<List<UUID>> = _playersGames
     val email: LiveData<String> = _email
     val name: LiveData<String> = _name
     val password: LiveData<String> = _password
@@ -16,5 +20,10 @@ class UserViewModel : ViewModel() {
         _email.value = email
         _name.value = name
         _password.value = password
+    }
+    fun addGame(id: UUID){
+        val oldlist = playersGames.value?.toMutableList()
+        oldlist?.add(id)
+        _playersGames.value = oldlist?.toList()
     }
 }

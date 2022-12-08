@@ -12,6 +12,7 @@ import com.example.sportlandapp.databinding.FragmentCreateGameBinding
 import com.example.sportlandapp.ui.models.GameModel
 import com.example.sportlandapp.viewmodel.GameViewModel
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import java.util.UUID
 
 class CreateGame : Fragment(R.layout.fragment__create_game) {
     private lateinit var binding: FragmentCreateGameBinding
@@ -63,11 +64,12 @@ class CreateGame : Fragment(R.layout.fragment__create_game) {
         else {
             GameViewModel.addgame(
                 GameModel(
-                    binding.mainSport.editText!!.text.toString(),
-                    binding.time.editText!!.text.toString(),
-                    binding.mainCity.editText!!.text.toString(),
-                    binding.space.editText!!.text.toString(),
-                    binding.numberPlayers.editText!!.text.toString(),
+                    Title = binding.mainSport.editText!!.text.toString(),
+                    Time = binding.time.editText!!.text.toString(),
+                    City = binding.mainCity.editText!!.text.toString(),
+                    Space = binding.space.editText!!.text.toString(),
+                    MaxPlayers = binding.numberPlayers.editText!!.text.toString().toInt(),
+                    Id = UUID.randomUUID()
                 )
             )
             findNavController().navigate(R.id.action_firstProfile_to_mainScreen)

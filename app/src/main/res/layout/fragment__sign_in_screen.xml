@@ -4,25 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green2"
+    android:background="@color/green3"
     android:orientation="vertical">
 
     <ImageView
+        android:layout_marginTop="32dp"
         android:id="@+id/main_icon"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:src="@drawable/main_icon" />
-
-    <TextView
-        android:id="@+id/main_sign_in_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:text="@string/view_again"
-        android:textAlignment="center"
-        android:textColor="@color/green3"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name2"
@@ -41,7 +31,10 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:maxLength="32"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +57,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:maxLength="32"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="@drawable/shape__text_input"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,7 +68,7 @@
         android:layout_height="wrap_content"
         android:text="@string/first_once"
         android:textAlignment="center"
-        android:textColor="@color/green3" />
+        android:textColor="@color/green2" />
 
     <Button
         android:id="@+id/buttonToRegisterScreen"
@@ -89,10 +83,10 @@
         android:id="@+id/buttonToFirstProfile"
         style="@style/button_style"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="115dp"
         android:layout_marginEnd="64dp"
         android:text="@string/next3"
-        android:textColor="@color/green2" />
+        android:textColor="@color/green3" />
 
 </LinearLayout>
 
