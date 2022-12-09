@@ -64,7 +64,7 @@ class RegisterScreen : Fragment(R.layout.fragment__register_sreen) {
         else {
             userViewModel.changeUserData(
                 name = binding.nameLayout.editText!!.text.toString(),
-                email = binding.loginLayout.editText!!.text.toString(),
+                email = binding.mainCity.editText!!.text.toString(),
                 password = binding.passwordLayout.editText!!.text.toString()
             )
             findNavController().navigate(R.id.action_registerScreen_to_mainScreen)
