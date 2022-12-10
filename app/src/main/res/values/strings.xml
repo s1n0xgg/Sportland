@@ -39,7 +39,7 @@
     <string name="create_game2">Создать игру!</string>
     <string name="profile2">Профиль</string>
     <string name="time">Время: %s</string>
-    <string name="city">%s</string>
+    <string name="city">%s, </string>
     <string name="number">%d/%d</string>
     <string name="location">%s</string>
 </resources>
