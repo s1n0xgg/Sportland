@@ -20,14 +20,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{user.name}"
+            android:textColor="@color/green2"
+            android:fontFamily="@font/roboto_black"
+            android:textAlignment="center"
+            android:layout_marginTop="160dp"
+            android:textSize="32sp"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{user.email}"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/account_circle_24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="25dp"></ImageView>
+
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_support"
@@ -36,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="64dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,16 +62,14 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
                     android:text="Поддержка:"
-                    android:textSize="20sp">
-                </TextView>
+                    android:textSize="20sp"></TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:text="ФИО - Сайдашев Егор Тимурович"
-                    android:textSize="17dp">
-                </TextView>
+                    android:textSize="17sp"></TextView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,8 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/call_24px">
-                    </ImageView>
+                        android:src="@drawable/call_24px"></ImageView>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -85,8 +90,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="10dp"
                         android:text="+7 (982) 789-50-19"
-                        android:textSize="17dp">
-                    </TextView>
+                        android:textSize="17sp"></TextView>
 
                 </LinearLayout>
 
@@ -101,8 +105,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/mail_24px">
-                    </ImageView>
+                        android:src="@drawable/mail_24px"></ImageView>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -110,8 +113,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="10dp"
                         android:text="sajdasevegor@gmail.com"
-                        android:textSize="17dp">
-                    </TextView>
+                        android:textSize="17sp"></TextView>
 
                 </LinearLayout>
 
@@ -127,8 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/send_icon_background">
-                    </ImageView>
+                        android:src="@drawable/send_icon_background"></ImageView>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -136,8 +137,83 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="10dp"
                         android:text="tw1stFn"
-                        android:textSize="17dp">
-                    </TextView>
+                        android:textSize="17sp"></TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/location_on_24px"></ImageView>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_black"
+                        android:text="@{user.email}"
+                        android:textSize="20sp"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/show_chart_24px">
+                    </ImageView>
+
+                    <Button
+                        android:id="@+id/statistika_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:text="Статистика                           >"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_black"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="16dp">
+                    </Button>
 
                 </LinearLayout>
 
