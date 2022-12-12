@@ -8,6 +8,6 @@ data class GameModel(
     val City: String,
     val Space: String,
     val MaxPlayers: Int,
-    val MinPlayers: Int = 0,
+    var MinPlayers: Int = 0,
     val Id: UUID
 )

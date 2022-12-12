@@ -8,6 +8,10 @@
             name="user"
             type="com.example.sportlandapp.viewmodel.UserViewModel" />
 
+        <variable
+            name="screen"
+            type="com.example.sportlandapp.ui.ProfileScreen" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,6 +32,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:clickable="true"
+            android:onClick="@{()->screen.photoPicker()}"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:src="@drawable/account_circle_24px"
@@ -207,7 +213,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/Widget.Material3.Button.TextButton"
-                        android:text="Статистика                           >"
+                        android:text="Статистика                      >"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:fontFamily="@font/roboto_black"

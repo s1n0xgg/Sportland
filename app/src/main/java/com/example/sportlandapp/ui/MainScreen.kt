@@ -16,9 +16,10 @@ import java.util.*
 class MainScreen : Fragment(R.layout.fragment__main_screen) {
     private val GameViewModel: GameViewModel by activityViewModels()
     private val userViewModel: UserViewModel by activityViewModels()
+    private lateinit var binding: FragmentMainScreenBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentMainScreenBinding.bind(view)
+        binding = FragmentMainScreenBinding.bind(view)
         binding.createGameButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainScreen_to_firstProfile)
         }
@@ -31,9 +32,11 @@ class MainScreen : Fragment(R.layout.fragment__main_screen) {
     }
 
     private fun updatePlayers(game: GameModel) {
+        GameViewModel.changegame(game.Id)
         userViewModel.addGame(game.Id)
-//        game.
-
+        binding.recyclerviewGames.adapter = GamesAdaptor(GameViewModel.gameslist.value!!) {
+            updatePlayers(it)
+        }
     }
 }
 

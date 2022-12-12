@@ -13,5 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+        <item name="colorSurface">@color/green2</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
     </style>
 </resources>

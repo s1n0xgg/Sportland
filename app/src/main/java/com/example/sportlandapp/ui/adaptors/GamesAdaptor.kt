@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportlandapp.R
 import com.example.sportlandapp.ui.models.GameModel
@@ -32,6 +34,10 @@ class GamesAdaptor(private val GamesDataSet: List<GameModel>, private val ClickL
         holder.number_text.text = holder.itemView.context.getString(R.string.number, GamesDataSet[position].MinPlayers, GamesDataSet[position].MaxPlayers)
         holder.join_button.setOnClickListener{
             ClickListener(GamesDataSet[position])
+            holder.join_button.isEnabled = false
+            Toast.makeText(
+                holder.itemView.context, "Вы успешно присоединились к игре!", Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
