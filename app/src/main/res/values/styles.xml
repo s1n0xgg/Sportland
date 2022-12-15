@@ -20,4 +20,7 @@
     <style name="card_style">
         <item name="android:background">@drawable/card_background</item>
     </style>
+    <style name="avatar_style">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

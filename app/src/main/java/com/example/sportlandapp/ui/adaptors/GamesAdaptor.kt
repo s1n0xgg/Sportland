@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sportlandapp.R
 import com.example.sportlandapp.ui.models.GameModel
 
-class GamesAdaptor(private val GamesDataSet: List<GameModel>, private val ClickListener: (GameModel) -> Unit) :
+class GamesAdaptor(
+    private val GamesDataSet: List<GameModel>,
+    private val ClickListener: (GameModel) -> Unit
+) :
     RecyclerView.Adapter<GamesAdaptor.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val game_name = view.findViewById<TextView>(R.id.game_name)
@@ -29,10 +32,16 @@ class GamesAdaptor(private val GamesDataSet: List<GameModel>, private val ClickL
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.game_name.text = GamesDataSet[position].Title
         holder.game_time.text = GamesDataSet[position].Time
-        holder.game_city.text = holder.itemView.context.getString(R.string.city, GamesDataSet[position].City)
-        holder.location_text.text = holder.itemView.context.getString(R.string.location, GamesDataSet[position].Space)
-        holder.number_text.text = holder.itemView.context.getString(R.string.number, GamesDataSet[position].MinPlayers, GamesDataSet[position].MaxPlayers)
-        holder.join_button.setOnClickListener{
+        holder.game_city.text =
+            holder.itemView.context.getString(R.string.city, GamesDataSet[position].City)
+        holder.location_text.text =
+            holder.itemView.context.getString(R.string.location, GamesDataSet[position].Space)
+        holder.number_text.text = holder.itemView.context.getString(
+            R.string.number,
+            GamesDataSet[position].MinPlayers,
+            GamesDataSet[position].MaxPlayers
+        )
+        holder.join_button.setOnClickListener {
             ClickListener(GamesDataSet[position])
             holder.join_button.isEnabled = false
             Toast.makeText(

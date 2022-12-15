@@ -23,7 +23,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/green3"
-        app:itemTextColor="@color/green3" />
+        app:itemTextColor="@color/green3"
+        android:background="@color/green2"/>
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"

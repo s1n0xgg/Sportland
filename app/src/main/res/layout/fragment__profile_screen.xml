@@ -8,10 +8,6 @@
             name="user"
             type="com.example.sportlandapp.viewmodel.UserViewModel" />
 
-        <variable
-            name="screen"
-            type="com.example.sportlandapp.ui.ProfileScreen" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,16 +27,31 @@
             android:textSize="32sp"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:clickable="true"
-            android:onClick="@{()->screen.photoPicker()}"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/avatar"
+            android:scaleType="centerCrop"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:src="@drawable/account_circle_24px"
+            app:srcCompat="@drawable/account_circle_24px"
+            android:layout_marginTop="25dp"
+            app:shapeAppearanceOverlay="@style/avatar_style"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="25dp"></ImageView>
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <com.google.android.material.imageview.ShapeableImageViewImageView-->
+<!--            android:id="@+id/avatar"-->
+<!--            android:clickable="true"-->
+<!--            android:layout_width="130dp"-->
+<!--            android:layout_height="130dp"-->
+<!--            android:src="@drawable/account_circle_24px"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:background="@drawable/list">-->
+
+<!--        </com.google.android.material.imageview.ShapeableImageViewImageView>-->
 
 
         <com.google.android.material.card.MaterialCardView

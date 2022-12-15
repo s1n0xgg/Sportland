@@ -13,7 +13,14 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
-        <item name="colorSurface">@color/green2</item>
-        <item name="colorOnSecondaryContainer">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <!-- Цвет текста активного пункта меню -->
+        <item name="colorOnSurface">@color/green3</item>
+        <!-- Цвет неактивного пункта меню -->
+        <item name="colorOnSurfaceVariant">@color/green3</item>
+        <!-- Цвет иконки активного пункта меню -->
+        <item name="colorOnSecondaryContainer">@color/green3</item>
+        <!-- Цвет активного пункта меню -->
+        <item name="colorSecondaryContainer">@color/white</item>
     </style>
 </resources>

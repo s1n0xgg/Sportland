@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.fragment.findNavController
 import com.example.sportlandapp.R
 import com.example.sportlandapp.databinding.FragmentMainScreenBinding
@@ -25,18 +26,16 @@ class MainScreen : Fragment(R.layout.fragment__main_screen) {
         }
         if (userViewModel.email.value.toString().isEmpty())
             findNavController().navigate(R.id.action_mainScreen_to_registerScreen4)
-        binding.recyclerviewGames.adapter = GamesAdaptor(GameViewModel.gameslist.value!!) {
-            updatePlayers(it)
+        GameViewModel.gameslist.observe(viewLifecycleOwner) {
+            binding.recyclerviewGames.adapter = GamesAdaptor(it) {
+                updatePlayers(it)
+            }
         }
-
     }
 
     private fun updatePlayers(game: GameModel) {
         GameViewModel.changegame(game.Id)
         userViewModel.addGame(game.Id)
-        binding.recyclerviewGames.adapter = GamesAdaptor(GameViewModel.gameslist.value!!) {
-            updatePlayers(it)
-        }
     }
 }
 
