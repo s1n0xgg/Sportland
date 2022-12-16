@@ -33,7 +33,7 @@ class CreateGame : Fragment(R.layout.fragment__create_game) {
         val item = arrayOf(
             "Баскетбол",
             "Футбол",
-            "Воллейбол",
+            "Волейбол",
             "Теннис",
             "Велоспорт",
             "Лыжи",
