@@ -10,7 +10,7 @@
 
     <style name="TextStyle">
         <item name="android:fontFamily">@font/roboto_black</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">32sp</item>
     </style>
 
     <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar">

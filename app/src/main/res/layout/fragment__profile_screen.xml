@@ -19,40 +19,25 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{user.name}"
-            android:textColor="@color/green2"
+            android:layout_marginTop="165dp"
             android:fontFamily="@font/roboto_black"
+            android:text="@{user.name}"
             android:textAlignment="center"
-            android:layout_marginTop="160dp"
-            android:textSize="32sp"
+            android:textColor="@color/green2"
+            android:textSize="26sp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/avatar"
-            android:scaleType="centerCrop"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            app:srcCompat="@drawable/account_circle_24px"
             android:layout_marginTop="25dp"
-            app:shapeAppearanceOverlay="@style/avatar_style"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-<!--        <com.google.android.material.imageview.ShapeableImageViewImageView-->
-<!--            android:id="@+id/avatar"-->
-<!--            android:clickable="true"-->
-<!--            android:layout_width="130dp"-->
-<!--            android:layout_height="130dp"-->
-<!--            android:src="@drawable/account_circle_24px"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            android:layout_marginTop="25dp"-->
-<!--            android:background="@drawable/list">-->
-
-<!--        </com.google.android.material.imageview.ShapeableImageViewImageView>-->
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/avatar_style"
+            app:srcCompat="@drawable/png_clipart_computer_icons_profile_s_free_angle_sphere" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_support"
@@ -199,9 +184,9 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
-                        android:textColor="@color/black"
                         android:fontFamily="@font/roboto_black"
                         android:text="@{user.email}"
+                        android:textColor="@color/black"
                         android:textSize="20sp"></TextView>
 
                 </LinearLayout>
@@ -216,21 +201,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/show_chart_24px">
-                    </ImageView>
+                        android:src="@drawable/show_chart_24px"></ImageView>
 
                     <Button
                         android:id="@+id/statistika_button"
+                        style="@style/Widget.Material3.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/roboto_black"
                         android:text="Статистика                      >"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:fontFamily="@font/roboto_black"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="16dp">
-                    </Button>
+                        android:textSize="20sp"></Button>
 
                 </LinearLayout>
 

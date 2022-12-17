@@ -33,7 +33,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/green3"
-        app:titleTextColor="@color/green2">
+        app:titleTextColor="@color/green2"
+        app:titleTextAppearance="@style/TextStyle">
 
     </com.google.android.material.appbar.MaterialToolbar>
 
