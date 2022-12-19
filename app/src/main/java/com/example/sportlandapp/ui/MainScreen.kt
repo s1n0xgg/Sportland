@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.fragment.findNavController
 import com.example.sportlandapp.R
 import com.example.sportlandapp.databinding.FragmentMainScreenBinding
@@ -12,7 +11,6 @@ import com.example.sportlandapp.ui.adaptors.GamesAdaptor
 import com.example.sportlandapp.ui.models.GameModel
 import com.example.sportlandapp.viewmodel.GameViewModel
 import com.example.sportlandapp.viewmodel.UserViewModel
-import java.util.*
 
 class MainScreen : Fragment(R.layout.fragment__main_screen) {
     private val GameViewModel: GameViewModel by activityViewModels()

@@ -23,8 +23,7 @@
         android:layout_marginTop="65dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/name2"
-        android:textColorHint="@color/green3"
-        app:startIconDrawable="@drawable/face_24px">
+        android:textColorHint="@color/green3">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -49,8 +48,7 @@
         android:textColorHint="@color/green3"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/green3"
-        app:errorEnabled="true"
-        app:startIconDrawable="@drawable/key_24px">
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
